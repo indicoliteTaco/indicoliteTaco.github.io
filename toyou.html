@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="card">
+        <h1>I'm Sorry</h1>
+         
+        <p>Hey,</p>
+        <p>I'm sorry for being incosiderate. I feel terrible for what I've said and how i acted earlier. I realize that I went back on my words, and disappointed you big time. </p>
+        <p id="apology-message">Can i have a chance to make it up with u?</p>
+        <img src = "img/catimg.png" alt="Apology Image"> <br>     
+        <div class="button-container">
+            <button id="forgive-button" onclick="showSecondButton()">Forgive Me?</button>
+            <button id="cake-button" style="display:none;" onclick="thankYouMessage()">May i have the honor to get you a big fat cake tmr :D?</button>
+        </div>
+    </div>
+
+    <script>
+        function showSecondButton() {
+            const message = document.getElementById('apology-message');
+            document.getElementById('apology-message').textContent = 'Thank u for giving me another chance!!';
+            message.style.color = '#1E90FF';
+            document.getElementById('forgive-button').style.display = 'none';
+            document.getElementById('cake-button').style.display = 'block';
+        }
+
+        function thankYouMessage() {
+            const message = document.getElementById('apology-message');
+            document.getElementById('apology-message').textContent = 'ILYSM';
+            message.style.color = '#1E90FF';
+            document.getElementById('cake-button').style.display = 'none';
+            const imgContainer = document.querySelector('.card');
+            imgContainer.innerHTML = `
+                <h1>IM OMW</h1>
+                
+                <p id="apology-message" style="color: #1E90FF; font-weight: bold;">ILYSM</p>
+                <img src="img/icegif-948_1.gif" alt="Happy GIF" style="width: 30%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            `;
+        }
+
+    </script>
+</body>
+</html>
